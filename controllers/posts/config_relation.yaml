@@ -1,0 +1,29 @@
+tags:
+    label: Etiqueta
+    view:
+        list: $/wiz/blog/models/tag/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form: $/wiz/blog/models/tag/fields.yaml
+        showSearch: true
+        recordsPerPage: 10
+
+categories:
+    label: Categorías
+    view:
+        list: $/wiz/blog/models/tag/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form: $/wiz/blog/models/tag/fields.yaml
+        showSearch: true
+        recordsPerPage: 10
+
+posts:
+    label: 'Entrada relacionada'
+    view:
+        list: $/wiz/blog/models/post/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        form: $/wiz/blog/models/post/fields.yaml
+        showSearch: true
+        recordsPerPage: 10

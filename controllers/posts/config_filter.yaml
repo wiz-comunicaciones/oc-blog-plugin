@@ -1,0 +1,19 @@
+scopes:
+    published:
+        label: 'Fecha de publicación'
+        type: daterange
+        conditions: (published_at between ':after' and ':before')
+
+    visible:
+        label: 'Publicadas'
+        type: switch
+        conditions:
+            - is_visible = '0'
+            - is_visible = '1'
+
+    type:
+        label: 'Tipo'
+        type: switch
+        conditions:
+            - is_external = '0'
+            - is_visible = '1'

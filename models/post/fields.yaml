@@ -1,0 +1,119 @@
+fields:
+
+    name:
+        label: 'Título'
+        span: full
+        required: 1
+
+    slug:
+        label: 'Slug'
+        span: full
+        required: 1
+        preset: name
+
+tabs:
+
+    fields:
+
+        is_external:
+            label: 'Tipo de entrada'
+            comment: 'Las entradas externas abren en una ventana nueva. Las internas se muestran directamente en el sitio'
+            type: dropdown
+            showSearch: false
+            options:
+                0: Interna
+                1: Externa
+            span: auto
+            required: 1
+            tab: 'General'
+
+        published_at:
+            label: 'Fecha de publicación'
+            comment: 'Seleccione la fecha a partir de la cual la entrada se encontrará disponible en el sitio, deje en blanco para utilizar la fecha actual'
+            span: auto
+            type: datepicker
+            mode: datetime
+            tab: 'General'
+
+        medium:
+            label: 'Medio'
+            comment: 'El nombre del medio de comunicación donde fue publicada la entrada'
+            span: auto
+            required: 1
+            trigger:
+                action: show
+                field: is_external
+                condition: value[1]
+            tab: 'General'
+
+        url:
+            label: 'URL'
+            comment: 'La URL completa de la publicación original. Incluya el protocolo (http: o https)'
+            span: auto
+            required: 1
+            placeholder: 'Comienza con http:// o https://'
+            trigger:
+                action: show
+                field: is_external
+                condition: value[1]
+            tab: 'General'
+
+        lead:
+            label: 'Bajada'
+            comment: 'El texto que se mostrará en las previsualizaciones de la entrada'
+            span: full
+            required: 1
+            toolbarButtons: 'fullscreen,bold,italic,underline,strikeThrough,subscript,superscript,formatOL,formatUL,undo,redo,clearFormatting,selectAll,html'
+            type: richeditor
+            size: small
+            trigger:
+                action: show
+                field: is_external
+                condition: value[0]
+            tab: 'General'
+
+        content:
+            label: 'Cuerpo'
+            required: 1
+            span: full
+            type: richeditor
+            size: large
+            trigger:
+                action: show
+                field: is_external
+                condition: value[0]
+            tab: 'General'
+
+        is_visible:
+            label: 'Visible'
+            comment: 'Determine si la publicación está visible en el sitio web o no'
+            span: full
+            type: switch
+            default: 1
+            tab: 'General'
+
+        featured_image:
+            label: 'Imagen principal'
+            commentAbove: 'Para mejores resultados, utilice una imagen en ratio 16:9 de al menos 800px de ancho'
+            span: full
+            required: 1
+            type: fileupload
+            mode: image
+            imageWidth: 350
+            fileTypes: jpg,jpeg,gif,png
+            thumbOptions:
+                mode: landscape
+                offset:
+                    - 0
+                    - 0
+                quality: 80
+                sharpen: 0
+                extension: auto
+            tab: 'General'
+
+        posts:
+            label: 'Etiquetas'
+            type: partial
+            span: full
+            path: field_posts
+            tab: 'Relaciones'

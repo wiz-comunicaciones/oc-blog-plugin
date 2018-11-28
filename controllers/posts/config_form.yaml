@@ -1,0 +1,10 @@
+name: Entrada
+form: $/wiz/blog/models/post/fields.yaml
+modelClass: Wiz\Blog\Models\Post
+defaultRedirect: wiz/blog/posts
+create:
+    redirect: 'wiz/blog/posts/update/:id'
+    redirectClose: wiz/blog/posts
+update:
+    redirect: wiz/blog/posts
+    redirectClose: wiz/blog/posts

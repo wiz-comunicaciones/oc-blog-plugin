@@ -1,0 +1,58 @@
+columns:
+    id:
+        label: 'ID'
+        type: number
+        invisible: 1
+        searchable: 1
+
+    featured_image:
+        label: 'Imagen'
+        type: wiz_blog_image
+        relationName: featured_image
+        width: 90
+        default: '---'
+        sortable: 0
+        invisible: 1
+
+    is_external:
+        label: 'Tipo'
+        type: partial
+        path: column_external
+
+    name:
+        label: 'Título'
+        searchable: 1
+
+    slug:
+        label: 'Slug'
+        searchable: 1
+        invisible: 1
+
+    lead:
+        label: 'Lead'
+        invisible: 1
+        searchable: 1
+
+    medium:
+        label: 'Medio'
+        invisible: 1
+        searchable: 1
+
+    url:
+        label: 'URL'
+        invisible: 1
+
+    published_at:
+        label: 'Fecha de publicación'
+        type: date
+        format: 'd-m-Y H:i'
+
+    is_visible:
+        label: 'Visible?'
+        type: switch
+
+    author:
+        label: 'Autor'
+        relation: author
+        select: CONCAT(first_name, ' ', last_name)
+        #select: TRIM(CONCAT(first_name, ' ', last_name))

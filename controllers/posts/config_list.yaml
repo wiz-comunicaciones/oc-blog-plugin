@@ -1,0 +1,15 @@
+list: $/wiz/blog/models/post/columns.yaml
+modelClass: Wiz\Blog\Models\Post
+title: Entradas
+filter: config_filter.yaml
+recordUrl: 'wiz/blog/posts/update/:id'
+noRecordsMessage: 'Aun no se ingresan entradas en el sistema'
+recordsPerPage: 10
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'Buscar...'
+showSorting: 1
+defaultSort: published_at desc
+showCheckboxes: 1
+showSetup: 1
