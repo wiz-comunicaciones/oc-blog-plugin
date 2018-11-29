@@ -94,10 +94,6 @@ class Post extends Model
             'conditions' => 'is_category=1',
             'count' => true
         ],
-        'assets' => [
-            'Wiz\Blog\Models\Asset',
-            'name' => 'assetable'
-        ],
     ];
 
     public $attachOne = [
