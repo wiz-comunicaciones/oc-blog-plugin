@@ -63,8 +63,7 @@ tabs:
             comment: 'El texto que se mostrará en las previsualizaciones de la entrada'
             span: full
             required: 1
-            toolbarButtons: 'fullscreen,bold,italic,underline,strikeThrough,subscript,superscript,formatOL,formatUL,undo,redo,clearFormatting,selectAll,html'
-            type: richeditor
+            type: textarea
             size: small
             trigger:
                 action: show
