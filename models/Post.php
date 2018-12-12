@@ -258,4 +258,9 @@ class Post extends Model
 
         return $related;
     }
+
+    public function isExternal()
+    {
+        return !is_null($this->is_external);
+    }
 }
