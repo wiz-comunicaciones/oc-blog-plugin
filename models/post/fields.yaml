@@ -65,10 +65,6 @@ tabs:
             required: 1
             type: textarea
             size: small
-            trigger:
-                action: show
-                field: is_external
-                condition: value[0]
             tab: 'General'
 
         content:
