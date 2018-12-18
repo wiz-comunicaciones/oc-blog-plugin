@@ -261,6 +261,6 @@ class Post extends Model
 
     public function isExternal()
     {
-        return !is_null($this->is_external);
+        return (bool) $this->is_external;
     }
 }
