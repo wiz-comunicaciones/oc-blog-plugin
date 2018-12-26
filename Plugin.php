@@ -17,7 +17,7 @@ class Plugin extends PluginBase
             'author' => 'Wiz Comunicaciones',
             'icon' => 'oc-icon-cogs',
             'iconSvg' =>  'plugins/wiz/blog/assets/images/plugin-icon.svg',
-            'homepage' => 'https://github.com/bombozama/wiz-cl'
+            'homepage' => 'https://github.com/wiz-comunicaciones/plugin-blog'
         ];
     }
 
