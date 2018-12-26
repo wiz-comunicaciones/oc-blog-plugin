@@ -29,13 +29,13 @@ class Plugin extends PluginBase
     public function registerNavigation()
     {
         return [
-            'blog' => [
+            'wiz-blog' => [
                 'label'       => 'Blog',
                 'url'         => Backend::url('wiz/blog/posts'),
                 'icon'        => 'icon-newspaper-o',
                 'iconSvg'     => 'plugins/wiz/blog/assets/images/plugin-icon.svg',
                 'order'       => 200,
-                'permissions' => ['wiz.blog.manage_posts'],
+                'permissions' => ['wiz.blog::manage_posts'],
             ]
         ];
     }

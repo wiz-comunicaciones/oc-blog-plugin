@@ -16,12 +16,12 @@ class Posts extends Controller
     public $relationConfig = 'config_relation.yaml';
 
     public $requiredPermissions = [
-        'wiz.blog.manage_posts'
+        'wiz.blog::manage_posts'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Wiz.Blog', 'blog', 'posts');
+        BackendMenu::setContext('Wiz.Blog', 'wiz-blog');
     }
 }
