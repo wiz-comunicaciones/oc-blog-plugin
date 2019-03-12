@@ -1,0 +1,23 @@
+columns:
+
+    id:
+        label: 'ID'
+        type: number
+        invisible: 1
+        searchable: 1
+
+    name:
+        label: 'Nombre'
+        searchable: 1
+
+    email:
+        label: 'Email'
+        searchable: 1
+
+    created_at:
+        label: 'Creado el'
+        searchable: 1
+
+    is_visible:
+        label: '¿Visible?'
+        type: switch

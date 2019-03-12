@@ -1,3 +1,6 @@
 1.0.1:
     - 'Initialize plugin.'
     - migration001.php
+1.0.2:
+    - 'Create comments database.'
+    - migration002.php

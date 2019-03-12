@@ -31,11 +31,27 @@ class Plugin extends PluginBase
         return [
             'wiz-blog' => [
                 'label'       => 'Blog',
-                'url'         => Backend::url('wiz/blog/posts'),
+                'url'         => Backend::url('wiz/blog/inicio'),
                 'icon'        => 'icon-newspaper-o',
                 'iconSvg'     => 'plugins/wiz/blog/assets/images/plugin-icon.svg',
                 'order'       => 200,
-                'permissions' => ['wiz.blog::manage_posts'],
+                'permissions' => ['wiz.blog::access_module'],
+
+                'sideMenu' => [
+                    'posts' => [
+                        'label'       => 'Entradas',
+                        'url'         => Backend::url('wiz/blog/posts'),
+                        'icon'        => 'icon-newspaper-o',
+                        'permissions' => ['wiz.bienisimo.manage_posts']
+                    ],
+                    'comments' => [
+                        'label'       => 'Comentarios',
+                        'url'         => Backend::url('wiz/blog/comments'),
+                        'icon'        => 'icon-comment-o',
+                        'permissions' => ['wiz.bienisimo.manage_comments']
+                    ],
+                ]
+
             ]
         ];
     }

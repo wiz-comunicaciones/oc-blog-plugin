@@ -1,0 +1,10 @@
+name: Comentarios
+form: $/wiz/blog/models/comment/fields.yaml
+modelClass: Wiz\Blog\Models\Comment
+defaultRedirect: wiz/blog/comments
+create:
+    redirect: 'wiz/blog/comments/update/:id'
+    redirectClose: wiz/blog/comments
+update:
+    redirect: wiz/blog/comments
+    redirectClose: wiz/blog/comments

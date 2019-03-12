@@ -112,3 +112,10 @@ tabs:
             span: full
             path: field_posts
             tab: 'Relaciones'
+
+        comments:
+            label: 'Comentarios'
+            type: partial
+            span: full
+            path: field_comments
+            tab: 'Comentarios'

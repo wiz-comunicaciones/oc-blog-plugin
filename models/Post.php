@@ -67,6 +67,13 @@ class Post extends Model
         ]
     ];
 
+    public $morphMany = [
+        'comments' => [ 
+            'Wiz\Blog\Models\Comment',
+            'name' => 'commentable'
+        ]
+    ];
+
     public $morphToMany = [
         'tags' => [
             'Wiz\Blog\Models\Tag',

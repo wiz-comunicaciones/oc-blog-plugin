@@ -1,0 +1,15 @@
+list: $/wiz/blog/models/comment/columns.yaml
+modelClass: Wiz\Blog\Models\Comment
+title: Comentarios
+filter: config_filter.yaml
+recordUrl: 'wiz/blog/comments/update/:id'
+noRecordsMessage: 'Aun no se ingresan comentarios en el sistema'
+recordsPerPage: 10
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'Buscar...'
+showSorting: 1
+defaultSort: published_at desc
+showCheckboxes: 1
+showSetup: 1

@@ -1,0 +1,26 @@
+fields:
+
+    is_visible:
+        label: 'Visible'
+        comment: 'Determine si el comentario será visible en el sitio web o no'
+        span: auto
+        type: switch
+        default: 1
+
+    content:
+        label: 'Comentario'
+        required: 1
+        span: full
+        size: large
+        type: textarea
+
+tabs:
+
+    fields:
+
+        comments:
+            label: 'Respuestas'
+            type: partial
+            span: full
+            path: field_comments
+            tab: 'Respuestas'

@@ -27,3 +27,13 @@ posts:
         form: $/wiz/blog/models/post/fields.yaml
         showSearch: true
         recordsPerPage: 10
+
+comments:
+    label: 'Comentarios de la entrada'
+    view:
+        list: $/wiz/blog/models/comment/columns.yaml
+        toolbarButtons: create|remove
+    manage:
+        form: $/wiz/blog/models/comment/fields.yaml
+        showSearch: true
+        recordsPerPage: 10

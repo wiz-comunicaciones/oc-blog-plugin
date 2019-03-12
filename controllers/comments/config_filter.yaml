@@ -1,0 +1,5 @@
+scopes:
+    published:
+        label: 'Fecha de publicación'
+        type: daterange
+        conditions: (published_at between ':after' and ':before')

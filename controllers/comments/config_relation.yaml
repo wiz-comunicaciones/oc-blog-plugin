@@ -1,0 +1,9 @@
+comments:
+    label: 'Respuesta del comentario'
+    view:
+        list: $/wiz/blog/models/comment/columns.yaml
+        toolbarButtons: create|remove
+    manage:
+        form: $/wiz/blog/models/comment/fields.yaml
+        showSearch: true
+        recordsPerPage: 10
