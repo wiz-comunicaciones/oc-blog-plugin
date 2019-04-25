@@ -42,13 +42,13 @@ class Plugin extends PluginBase
                         'label'       => 'Entradas',
                         'url'         => Backend::url('wiz/blog/posts'),
                         'icon'        => 'icon-newspaper-o',
-                        'permissions' => ['wiz.bienisimo.manage_posts']
+                        'permissions' => ['wiz.blog::manage_posts']
                     ],
                     'comments' => [
                         'label'       => 'Comentarios',
                         'url'         => Backend::url('wiz/blog/comments'),
                         'icon'        => 'icon-comment-o',
-                        'permissions' => ['wiz.bienisimo.manage_comments']
+                        'permissions' => ['wiz.blog::manage_comments']
                     ],
                 ]
 
