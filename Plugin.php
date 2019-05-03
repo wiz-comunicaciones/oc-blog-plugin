@@ -44,6 +44,12 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-newspaper-o',
                         'permissions' => ['wiz.blog::manage_posts']
                     ],
+                    'multimedia' => [
+                        'label'       => 'Multimedia',
+                        'url'         => Backend::url('wiz/blog/multimedia'),
+                        'icon'        => 'icon-youtube-play',
+                        'permissions' => ['wiz.blog.manage_multimedia']
+                    ],
                     'comments' => [
                         'label'       => 'Comentarios',
                         'url'         => Backend::url('wiz/blog/comments'),

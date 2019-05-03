@@ -4,3 +4,6 @@
 1.0.2:
     - 'Create comments database.'
     - migration002.php
+1.0.3:
+    - 'Create assets database.'
+    - migration003.php

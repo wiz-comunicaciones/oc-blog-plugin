@@ -37,3 +37,13 @@ comments:
         form: $/wiz/blog/models/comment/fields.yaml
         showSearch: true
         recordsPerPage: 10
+
+assets:
+    label: 'Multimedia de la entrada'
+    view:
+        list: $/wiz/blog/models/asset/columns.yaml
+        toolbarButtons: add|create|remove
+    manage:
+        form: $/wiz/blog/models/asset/fields.yaml
+        showSearch: true
+        recordsPerPage: 10

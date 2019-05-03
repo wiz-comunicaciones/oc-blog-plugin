@@ -1,0 +1,17 @@
+name: 'Contenido Multimedia'
+modelClass: Wiz\Blog\Models\Asset
+form: $/wiz/blog/models/asset/fields.yaml
+defaultRedirect: wiz/blog/multimedia
+create:
+    title: 'Agregar contenido multimedia'
+    redirect: 'wiz/blog/multimedia/update/:id'
+    redirectClose: wiz/blog/multimedia
+    flashSave: 'El contenido multimedia ha sido creado exitosamente'
+update:
+    title: 'Actualizar contenido multimedia'
+    redirect: wiz/blog/multimedia
+    redirectClose: wiz/blog/multimedia
+    flashSave: 'El contenido multimedia se ha actualizado exitosamente'
+    flashDelete: 'El elemento multimedia ha sido eliminada'
+preview:
+    title: 'Ver contenido multimedia'

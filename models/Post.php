@@ -10,6 +10,7 @@ class Post extends Model
     use \October\Rain\Database\Traits\SoftDelete;
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Nullable;
+    use \October\Rain\Database\Traits\Purgeable;
     use \Wiz\Blog\Traits\Searchable;
 
     protected $dates = [
@@ -29,6 +30,16 @@ class Post extends Model
         'lead',
         'content',
         'medium',
+    ];
+
+    protected $purgeable = [
+        'default_multimedia',
+        'wme_multimedia'
+    ];    
+
+    public $attributes = [
+        'default_multimedia' => '',
+        'wme_multimedia' => ''
     ];
 
     protected $guarded = [];
@@ -100,6 +111,12 @@ class Post extends Model
             'table' => 'wiz_blog_taggables',
             'conditions' => 'is_category=1',
             'count' => true
+        ],
+        'assets' => [
+            'Wiz\Blog\Models\Asset',
+            'name' => 'assetable',
+            'table' => 'wiz_blog_assetables',
+            'conditions' => 'is_blog=1'
         ],
     ];
 
@@ -269,5 +286,41 @@ class Post extends Model
     public function isExternal()
     {
         return (bool) $this->is_external;
+    }
+
+    public function afterFetch()
+    {
+        $this->default_multimedia = $this->insertMultimediaPost($this);
+    }
+
+    public function insertMultimediaPost($post)
+    {
+        $this->wme_multimedia = $post->content;
+        $multimedia_span = $post->assets;
+        $multimedia_default = [];
+        $assets_cont = count($post->assets);
+        $cont = 0;
+        $matches = preg_match_all('/id="wme_/', $post->content);
+        if(preg_match('/id="wme_/', $post->content)){
+            if ($matches > $assets_cont)
+                $top_assets = $assets_cont;
+            else
+                $top_assets = $matches;
+            for( $i=0 ;$i<$top_assets; $i++ ){
+                $cont++;
+                $text = '/<p id="wme_' . $cont . '">/';
+                $span_full = '<div class="post_video">' . $multimedia_span[$i]->getOutPut('100%') . '</div>';
+                $this->wme_multimedia = preg_replace($text, $span_full, $this->wme_multimedia);
+            }
+            if($assets_cont > $matches) {
+                for($i=$matches;$i<$assets_cont;$i++){
+                    $multimedia_default[$i] = $multimedia_span[$i];
+                }
+            }
+        } elseif(!is_null($post->assets)) {
+            $multimedia_default = $multimedia_span;
+        }
+        return $multimedia_default;
+
     }
 }

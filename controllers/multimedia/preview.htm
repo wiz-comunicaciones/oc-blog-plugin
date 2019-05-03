@@ -1,0 +1,73 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('wiz/blog/multimedia') ?>">Multimedia</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+    <div class="scoreboard">
+        <div data-control="toolbar">
+            <div class="scoreboard-item title-value">
+                <h4>Contenido Multimedia</h4>
+                <p><?= strtoupper($formModel->title) ?></p>
+                <p class="description"><?= $formModel->description ?></p>
+            </div>
+        </div>
+    </div>
+    <div class="form-preview">
+        <div class="row">
+            <div class="col-md-5">
+                <?php if($formModel->type == 6){ ?><div id="fb-root"></div><?php } ?>
+                <?php switch($formModel->type){
+                    case 1:
+                    case 2:
+                        echo '<img class="img-responsive" src="' . $formModel->getLink() . '">';
+                        break;
+                    case 4:
+                        echo \Wiz\Blog\Classes\AssetYouTube::get($formModel->url, [], ['width' => 400, 'height' => 225]);
+                        break;
+                    case 5:
+                        echo \Wiz\Blog\Classes\AssetVimeo::get($formModel->url, [], ['width' => 400, 'height' => 225]);
+                        break;
+                    case 6:
+                        echo \Wiz\Blog\Classes\AssetFacebookVideo::get($formModel->url);
+                        break;
+                    case 3:
+                    default:
+                        echo \Wiz\Blog\Classes\AssetWebsite::preview($formModel->url, ['width' => 600], ['class' => 'img-responsive', 'width' => 600, 'height' => 450]);
+                        break;
+                } ?>
+            </div>
+            <div class="col-md-7">
+                <p><b><?= $formModel->title ?></b><br>
+                <?=($formModel->description != '')  ? 'Descripción: ' . $formModel->description . '<br>' : '' ?>
+                Tipo: <?= $formModel->getTypeOptionName(); ?><br>
+                URL: <a href="<?= $formModel->getLink(); ?>" target="_blank"><?= $formModel->url ?></a></p>
+            </div>
+        </div>
+    </div>
+<?php else: ?>
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+<?php endif ?>
+
+<p>
+    <a href="<?= Backend::url('wiz/blog/multimedia') ?>" class="btn btn-default oc-icon-chevron-left">
+        <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a>
+    <a href="<?= Backend::url('wiz/blog/multimedia/update', [$formModel->id]) ?>" class="btn btn-primary oc-icon-pencil">Actualizar contenido multimedia</a>
+</p>
+<?php if($formModel->type == 6){ ?>
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({ cache: true });
+        $.getScript('https://connect.facebook.net/es_LA/sdk.js', function(){
+            FB.init({
+                appId      : '1811273155834793',
+                xfbml      : true,
+                version    : 'v2.12'
+            });
+        });
+    });
+</script>
+<?php } ?>

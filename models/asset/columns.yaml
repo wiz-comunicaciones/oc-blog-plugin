@@ -1,0 +1,43 @@
+columns:
+    id:
+        label: 'ID'
+        type: number
+        searchable: 1
+        invisible: 1
+
+    type:
+        label: 'Tipo'
+        type: wiz_blog_translate_opts
+        method: getTypeOptions
+        default: ---
+
+    title:
+        label: 'Título'
+        type: text
+        searchable: 1
+
+    description:
+        label: 'Descripción'
+        type: text
+        searchable: 1
+
+    url:
+        label: URL
+        type: text
+        default: '---'
+
+    creator:
+        label: 'Agregado por'
+        relation: author
+        searchable: 1
+        select: TRIM(CONCAT(first_name, ' ', last_name))
+
+    created_at:
+        label: 'Fecha creación'
+        type: datetime
+        format: 'd/m/y H:i'
+
+    updated_at:
+        label: ' Última modificación'
+        type: datetime
+        format: 'd/m/y H:i'

@@ -1,0 +1,16 @@
+columns:
+    type:
+        label: Tipo
+        type: wiz_blog_translate_opts
+        method: getTypeOptions
+        default: ---
+
+    title:
+        label: Título
+        type: text
+        searchable: 1
+
+    updated_at:
+        label: ' Última modificación'
+        type: datetime
+        format: 'd/m/y H:i'

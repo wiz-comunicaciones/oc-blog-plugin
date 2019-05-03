@@ -119,3 +119,10 @@ tabs:
             span: full
             path: field_comments
             tab: 'Comentarios'
+
+        assets:
+            label: 'Multimedia'
+            type: partial
+            span: full
+            path: field_assets
+            tab: 'Multimedia'

@@ -1,0 +1,87 @@
+fields:
+    type:
+        label: 'Tipo'
+        type: dropdown
+        required: 1
+        span: auto
+
+    published_at:
+        label: 'Fecha de publicación'
+        comment: 'Seleccione la fecha a partir de la cual la entrada se encontrará disponible en el sitio, deje en blanco para utilizar la fecha actual'
+        span: auto
+        type: datepicker
+        mode: datetime
+
+    title:
+        label: 'Título'
+        required: 1
+
+    description:
+        label: 'Descripción'
+        type: textarea
+        span: left
+        size: tiny
+
+    path:
+        label: 'Archivo'
+        type: mediafinder
+        mode: file
+        prompt: 'Seleccione un archivo de la biblioteca de medios'
+        span: right
+        required: 1
+        trigger:
+            action: show
+            field: type
+            condition: 'value[1]'
+
+    file:
+        label: 'Archivo'
+        type: fileupload
+        mode: file
+        useCaption: 0
+        span: right
+        required: 1
+        trigger:
+            action: show
+            field: type
+            condition: 'value[2]'
+
+    url:
+        label: 'URL/Link'
+        type: text
+        span: right
+        placeholder: 'Recuerde incluir el protocolo (http, https, ftp)'
+        required: 1
+        trigger:
+            action: show
+            field: type
+            condition: 'value=[3]value=[4]value=[5]value=[6]value=[7]'
+
+    is_testimonial:
+        label: 'Testimonio'
+        comment: 'Determine si la publicación es un testimonio o no'
+        span: auto
+        type: switch
+
+    is_blog:
+        label: 'Entrada'
+        comment: 'Determine si la publicación es para una entrada del blog.'
+        span: auto
+        type: switch
+
+    thumb:
+        label: 'Miniatura'
+        commentAbove: 'Opcional. Utilice en caso de necesitar forzar miniatura'
+        type: fileupload
+        mode: image
+        imageHeight: 380
+        imageWidth: 675
+        useCaption: 0
+        span: auto
+
+    is_visible:
+        label: 'Visible'
+        comment: 'Determine si la publicación está visible en el sitio web o no'
+        span: full
+        type: switch
+        default: 1
