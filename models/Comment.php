@@ -64,4 +64,11 @@ class Comment extends Model
         }
     }
 
+    public function scopeIsVisible ($query)
+    {
+        $query->where(function($q){
+            $q->where('is_visible', 1);
+        });        
+    }
+
 }
