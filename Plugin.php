@@ -62,6 +62,13 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerMailTemplates()
+    {
+        return [
+            'wiz.blog::mail.commentsform' => 'Send comment form submission info'
+        ];
+    }
+
     public function registerListColumnTypes()
     {
         return [
