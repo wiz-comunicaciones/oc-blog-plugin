@@ -81,7 +81,8 @@ class Post extends Model
     public $morphMany = [
         'comments' => [ 
             'Wiz\Blog\Models\Comment',
-            'name' => 'commentable'
+            'name' => 'commentable',
+            'scope' => 'isVisible'
         ]
     ];
 

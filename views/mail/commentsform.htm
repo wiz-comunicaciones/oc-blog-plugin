@@ -1,0 +1,31 @@
+subject = "Contacto desde la web"
+description = "Mensaje enviado al hacer un comentario al blog"
+==
+
+Un usuario ha hecho un comentario con la siguiente información:
+
+Nombre: {{ name }}
+
+E-mail: {{ email }}
+
+Comentario:
+{{ content_message|raw }}
+
+---
+Mensaje generado el {{ message_timestamp }}.
+
+==
+<p>Un usuario ha hecho un comentario con la siguiente información:</p>
+
+<dl>
+    <dt>Nombre:</dt>
+    <dd><b>{{ name }}</b></dd>
+    <dt>E-mail:</dt>
+    <dd><b>{{ email }}</b></dd>
+    <dt>Comentario:</dt>
+    <dd><b>{{ content_message|raw }}</b></dd>
+    <dt>En la entrada:</dt>
+    <dd><b>{{ post }}</b></dd>
+</dl>
+
+<p>Mensaje generado el {{ message_timestamp }}.</p>
