@@ -4,8 +4,6 @@ OctoberCMS plugin to manage general blog posts.
 Developed by Wiz Comunicaciones.
 
 
-
-
 Theme integration
 =======================================
 
@@ -36,3 +34,8 @@ function onStart() {
 ```twig
 {{ dump(item) }}
 ```
+
+Next steps
+----------------------------
+1. Implement fulltext on different connection drivers.
+2. Detect and auto disable plugin in case of database driver incompatibility. 

@@ -8,8 +8,7 @@ class Migration001 extends Migration
 {
     public function up()
     {
-        Schema::create('wiz_blog_posts', function($table)
-        {
+        Schema::create('wiz_blog_posts', function($table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->text('name')->nullable();
@@ -28,18 +27,19 @@ class Migration001 extends Migration
             $table->timestamp('deleted_at')->nullable();
         });
 
-        DB::statement('ALTER TABLE `wiz_blog_posts` ADD FULLTEXT `ft_index` (`name`, `lead`, `content`, `medium`)');
+        # TODO: Blog plugin is mysql specific and should not be used with other database drivers
+        # TODO: Checkout fulltext specs for all offered OctoberCMS drivers and execute implementation
+        if (config('database.default') == 'mysql')
+            DB::statement('ALTER TABLE `wiz_blog_posts` ADD FULLTEXT `ft_index` (`name`, `lead`, `content`, `medium`)');
 
-        Schema::create('wiz_blog_related_posts', function($table)
-        {
+        Schema::create('wiz_blog_related_posts', function($table) {
             $table->engine = 'InnoDB';
             $table->integer('post_id')->unsigned();
             $table->integer('related_id')->unsigned();
             $table->unique(['post_id', 'related_id']);
         });
 
-        Schema::create('wiz_blog_tags', function($table)
-        {
+        Schema::create('wiz_blog_tags', function($table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->string('title')->nullable();
@@ -51,8 +51,7 @@ class Migration001 extends Migration
             $table->timestamp('deleted_at')->nullable();
         });
 
-        Schema::create('wiz_blog_taggables', function($table)
-        {
+        Schema::create('wiz_blog_taggables', function($table) {
             $table->engine = 'InnoDB';
             $table->integer('tag_id');
             $table->integer('taggable_id');
