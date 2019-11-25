@@ -106,6 +106,13 @@ tabs:
                 extension: auto
             tab: 'General'
 
+        categories:
+            label: 'Categorías'
+            type: partial
+            span: full
+            path: field_categories
+            tab: 'Categorías'
+
         posts:
             label: 'Etiquetas'
             type: partial

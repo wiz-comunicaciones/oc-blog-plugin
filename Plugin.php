@@ -44,6 +44,12 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-newspaper-o',
                         'permissions' => ['wiz.blog::manage_posts']
                     ],
+                    'categories' => [
+                        'label'       => 'Categorías',
+                        'url'         => Backend::url('wiz/blog/categories'),
+                        'icon'        => 'icon-list-ul',
+                        'permissions' => ['wiz.blog::manage_categories']
+                    ],
                     'multimedia' => [
                         'label'       => 'Multimedia',
                         'url'         => Backend::url('wiz/blog/multimedia'),

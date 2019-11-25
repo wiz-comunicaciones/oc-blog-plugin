@@ -7,3 +7,6 @@
 1.0.3:
     - 'Create assets database.'
     - migration003.php
+1.0.4:
+    - 'Create categories database.'
+    - migration004.php

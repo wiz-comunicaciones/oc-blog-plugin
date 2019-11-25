@@ -1,0 +1,10 @@
+name: Categorias
+form: $/wiz/blog/models/category/fields.yaml
+modelClass: Wiz\Blog\Models\Category
+defaultRedirect: wiz/blog/categories
+create:
+    redirect: 'wiz/blog/categories/update/:id'
+    redirectClose: wiz/blog/categories
+update:
+    redirect: wiz/blog/categories
+    redirectClose: wiz/blog/categories

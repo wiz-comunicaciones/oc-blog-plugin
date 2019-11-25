@@ -101,16 +101,16 @@ class Post extends Model
             'count' => true,
         ],
         'categories' => [
-            'Wiz\Blog\Models\Tag',
-            'name' => 'taggable',
-            'table' => 'wiz_blog_taggables',
-            'conditions' => 'is_category=1'
+            'Wiz\Blog\Models\Category',
+            'name' => 'categorizable',
+            'table' => 'wiz_blog_categorizables',
+            'conditions' => 'is_visible=1'
         ],
         'categories_count' => [
-            'Wiz\Blog\Models\Tag',
-            'name' => 'taggable',
-            'table' => 'wiz_blog_taggables',
-            'conditions' => 'is_category=1',
+            'Wiz\Blog\Models\Category',
+            'name' => 'categorizable',
+            'table' => 'wiz_blog_categorizables',
+            'conditions' => 'is_visible=1',
             'count' => true
         ],
         'assets' => [

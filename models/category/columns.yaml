@@ -1,0 +1,28 @@
+columns:
+
+    id:
+        label: 'ID'
+        type: number
+        searchable: 1
+        invisible: 1
+
+    title:
+        label: 'Título'
+        type: text
+        searchable: 1
+
+    creator:
+        label: 'Agregado por'
+        relation: author
+        searchable: 1
+        select: TRIM(CONCAT(first_name, ' ', last_name))
+
+    created_at:
+        label: 'Fecha creación'
+        type: datetime
+        format: 'd/m/y H:i'
+
+    updated_at:
+        label: ' Última modificación'
+        type: datetime
+        format: 'd/m/y H:i'

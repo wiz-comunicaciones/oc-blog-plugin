@@ -1,0 +1,25 @@
+fields:
+
+    title:
+        label: 'Título'
+        span: auto
+        required: 1
+
+    slug:
+        label: 'Slug'
+        span: auto
+        required: 1
+        preset: title
+
+    description:
+        label: 'Descripción'
+        span: full
+        type: textarea
+        required: 1
+
+    is_visible:
+        label: 'Visible'
+        comment: 'Determine si la publicación está visible en el sitio web o no'
+        span: auto
+        type: switch
+        default: 1
