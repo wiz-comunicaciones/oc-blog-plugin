@@ -1,0 +1,12 @@
+<div class="scoreboard">
+    <div class="scoreboard-item title-value">
+        <h4>Comentario hecho por: <?= $formModel->name ?></h4>
+        <?php if ($formModel->commentable->posts): ?> 
+            <p><a href="<?= Backend::url('wiz/blog/posts/update/')?>/<?= $formModel->commentable->id ?>"><?= $formModel->commentable->name ?></a></p>
+        <?php else: ?>
+            <p>En respuesta al comentario de: <a href="<?= Backend::url('wiz/blog/comments/update/')?>/<?= $formModel->commentable->id ?>"><?= $formModel->commentable->name ?></a></p>
+            <br>
+            <p><?= $formModel->comment ?></p>
+        <?php endif; ?>
+    </div>
+</div>

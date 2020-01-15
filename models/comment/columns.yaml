@@ -1,5 +1,11 @@
 columns:
 
+    info:
+        type: partial
+        path: field_info
+        span: full
+        context: update
+        
     id:
         label: 'ID'
         type: number
