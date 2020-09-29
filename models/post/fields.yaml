@@ -71,6 +71,7 @@ tabs:
             label: 'Cuerpo'
             required: 1
             span: full
+            toolbarButtons: 'undo,redo,|,fullscreen,bold,italic,underline,strikeThrough,fontFamily,fontSize,|,paragraphStyle,|,paragraphFormat,align,formatOL,formatUL,outdent,indent,insertHR,clearFormatting,selectAll,html'
             type: richeditor
             size: large
             trigger:

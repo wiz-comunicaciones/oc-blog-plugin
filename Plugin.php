@@ -13,9 +13,9 @@ class Plugin extends PluginBase
     {
         return [
             'name' => 'Blog',
-            'description' => 'Allows management of blog posts and tags',
+            'description' => 'Permite la gestión de entradas y categorías',
             'author' => 'Wiz Comunicaciones',
-            'icon' => 'oc-icon-cogs',
+            'icon' => 'oc-icon-book',
             'iconSvg' =>  'plugins/wiz/blog/assets/images/plugin-icon.svg',
             'homepage' => 'https://github.com/wiz-comunicaciones/plugin-blog'
         ];
@@ -65,6 +65,18 @@ class Plugin extends PluginBase
                 ]
 
             ]
+        ];
+    }
+
+    public function registerComponents()
+    {
+        return [
+            \Wiz\Blog\Components\Categories::class => 'Categories',
+            \Wiz\Blog\Components\Category::class => 'Category',
+            \Wiz\Blog\Components\Posts::class => 'Posts',
+            \Wiz\Blog\Components\Post::class => 'Post',
+            \Wiz\Blog\Components\Search::class => 'Search',
+            \Wiz\Blog\Components\SearchResults::class => 'SearchResults',
         ];
     }
 
