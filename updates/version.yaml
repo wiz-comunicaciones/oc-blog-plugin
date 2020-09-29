@@ -13,3 +13,6 @@
 1.0.5:
     - 'Add if its a featured post'
     - migration005.php
+1.0.6:
+    - 'Add if the category is menu'
+    - migration006.php

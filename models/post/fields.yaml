@@ -83,7 +83,15 @@ tabs:
         is_visible:
             label: 'Visible'
             comment: 'Determine si la publicación está visible en el sitio web o no'
-            span: full
+            span: auto
+            type: switch
+            default: 1
+            tab: 'General'
+
+        is_featured:
+            label: 'Destacada'
+            comment: 'Determine si la publicación es destacada o no'
+            span: auto
             type: switch
             default: 1
             tab: 'General'

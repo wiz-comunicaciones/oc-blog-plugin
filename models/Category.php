@@ -56,4 +56,9 @@ class Category extends Model
     {
         $query->where('is_visible', 1);
     }
+
+    public function scopeMenu($query)
+    {
+        $query->where('is_menu', 1);
+    }
 }

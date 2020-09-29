@@ -19,7 +19,14 @@ fields:
 
     is_visible:
         label: 'Visible'
-        comment: 'Determine si la publicación está visible en el sitio web o no'
+        comment: 'Determine si la categoría está visible en el sitio web o no'
+        span: auto
+        type: switch
+        default: 1
+
+    is_menu:
+        label: 'Aparece en menú'
+        comment: 'Determine si la categoría aparece en el menú o no'
         span: auto
         type: switch
         default: 1
