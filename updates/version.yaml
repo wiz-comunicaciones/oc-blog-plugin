@@ -10,3 +10,6 @@
 1.0.4:
     - 'Create categories database.'
     - migration004.php
+1.0.5:
+    - 'Add if its a featured post'
+    - migration005.php

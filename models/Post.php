@@ -164,6 +164,13 @@ class Post extends Model
         });
     }
 
+    public function scopeFeatured($query)
+    {
+        $query->where(function($q){
+            $q->where('is_featured', 1);
+        });
+    }
+
     /**
      * Apply a constraint to the query to find the nearest sibling
      *
